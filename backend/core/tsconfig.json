@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.options.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": false,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "module": "ESNext",
+    "noImplicitReturns": false,
+    "esModuleInterop": true,
+    "composite": false,
+    "noEmit": true,
+    "paths": {
+      "@backend-core-functions/*": ["./functions/*"],
+      "@backend-core-resources/*": ["./resources/*"],
+      "@backend-core-rest-api/*": ["./rest-api/*"],
+    }
+  },
+  "references": [],
+  "include": ["./**/*.ts"],
+  "ts-node": {
+    "esm": true
+  } 
+}

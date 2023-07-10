@@ -1,0 +1,4 @@
+{
+  "extends": "./tsconfig.options.json",
+  "include": ["*.config.ts", "vitest.workspace.ts"]
+}

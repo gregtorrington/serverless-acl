@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":rebaseStalePrs"],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@swarmion/"],
+      "groupName": "swarmion monorepo"
+    },
+    {
+      "matchDatasources": ["npm"],
+      "stabilityDays": 3
+    },
+    {
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "18.x"
+    }
+  ],
+  "hostRules": [
+    {
+      "matchHost": "https://npm.pkg.github.com/",
+      "hostType": "npm",
+      "encrypted": {
+        "token": "wcFMA/xDdHCJBTolAQ//ZFxHoySLTCq1nwhM1W1krmbSCiDvmADfkCgznjEDSBfdy1HZkgvpYOLW+u2Hc+jIFgLqTaXMhogK29a21GilAzhvbAQgpidWl7P0ahO636DR1TOxnr12wG0kK7kupYzOU/cdGi9+q5SMXAvQz62Zq471Ossmsql/CJbF6hW1syNw0cMM3xvN3HWHURVpb2zGEUe4It+p5HdhKQHSvKQMxdL9I67vXb4POyS9Lu+fDCDgi7RWwvX2xjleSt4cdURfhaSXHgRwEUg5ngyn50LFjp0nxsD0dGUK6+m6W6gWuBKPDx0NSMwa5rmsDa/uB66IueCmcbm+6N7O7rM9X8wW2QF85smLjEk2kgenYzXjVqyxVAcaPXdCPj42I/J9mKkgndPsARqaSZxrsXZ5567GQkC31jCyNKzfOHx5SWVBoodJgg4vowoZ1kt84wrYzS8pTW4iPRe0krtyjLEdN/OII8lm7gKfCtJ8QgYV8H2Sres09Da+X1Y5/8nz6hssSjTnNbHYqCjnMvySotN9c7RjUJ2E3/gQtBIEnOWNkAxw+UftrYBARV237aemNqsi8UAp21uktd7TtuOxZOyRd1NCzUuBNe2QoZ/6w/i/soHEIvgS8pip83TbU8foiw1yIy5KpPmQj0Hbsmdpm18SfZ1qhCw8yu4GjeEXNIpGU7m2CeDSfgFmh8bnSCrMV3vjZtdW7PAc+0kQvcVClim3lGU9dQuqSAJTL1vlayCaAWHxvDbSbXGbzG73rpYYr/dQYq5vbEF0KKjunRmI+GOyoaA46QLhQO5k0IXGHQyXGiR2l5mKy1byE8Kd8RRxay1RJQL5+7uwZk+e9JIZPTcQBt0qwg"
+      }
+    }
+  ]
+}

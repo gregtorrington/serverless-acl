@@ -1,16 +1,12 @@
-/* eslint-disable max-lines */
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:import/recommended'],
-  ignorePatterns: [
-    '**/node_modules/',
-    '**/nx-cache/',
-    '**/dist/',
-    '**/cdk.out/',
-    '**/coverage/',
-    '**/build/',
-    '**/public/',
+  extends: [
+    'eslint:recommended',
+    'plugin:import/recommended',
+    'plugin:prettier/recommended',
   ],
+  ignorePatterns: ['**/dist', '**/cdk.out'],
   rules: {
+    'prettier/prettier': 'error',
     'import/extensions': 0,
     'import/no-unresolved': 0,
     'import/prefer-default-export': 0,
@@ -38,7 +34,9 @@ module.exports = {
     'import/order': [
       'error',
       {
-        pathGroups: [{ pattern: '@acl-app/**', group: 'unknown' }],
+        pathGroups: [
+          { pattern: '@anti-corruption-layer/**', group: 'unknown' },
+        ],
         groups: [
           ['external', 'builtin'],
           'unknown',
@@ -83,7 +81,7 @@ module.exports = {
       {
         patterns: [
           {
-            group: ['@acl-app/*/*'],
+            group: ['@anti-corruption-layer/*/*'],
             message:
               'import of internal modules must be done at the root level.',
           },
@@ -123,11 +121,13 @@ module.exports = {
       extends: [
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:prettier/recommended',
       ],
       parser: '@typescript-eslint/parser',
       parserOptions: {
-        project: 'tsconfig.json',
+        project: 'tsconfig.eslint.json',
       },
+      settings: { 'import/resolver': { typescript: {} } },
       rules: {
         '@typescript-eslint/prefer-optional-chain': 'error',
         'no-shadow': 'off',
@@ -183,20 +183,6 @@ module.exports = {
           {
             allowNumber: true,
             allowBoolean: true,
-          },
-        ],
-      },
-    },
-    {
-      files: ['**/src/**'],
-      excludedFiles: ['**/__tests__/**', '**/*.test.ts?(x)'],
-      rules: {
-        'import/no-extraneous-dependencies': [
-          'error',
-          {
-            devDependencies: false,
-            optionalDependencies: false,
-            peerDependencies: true,
           },
         ],
       },

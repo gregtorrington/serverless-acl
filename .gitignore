@@ -14,9 +14,13 @@ node_modules
 # Ignore stack.json files
 **/stack.json
 
+# Ignore env.json files
+**/env.json
+
 # production
 /build
 **/dist
+**/cdk.out
 
 # testing
 coverage
@@ -29,6 +33,7 @@ coverage
 .env.dev
 .env.development
 .env.local
+.env.test
 
 # misc
 .DS_Store
@@ -37,8 +42,12 @@ npm-debug.log*
 # If people use virtualenvs for python scripts
 .venv
 
-# remove files to invoke lambdas locally
+# Ignore files to invoke lambdas locally
 event.json
+env.json
+
+# Automatic documentation files
+open-api-doc.json
 
 # Nx caching
 nx-cache
@@ -46,5 +55,5 @@ nx-cache
 # Build cache manifests
 *.tsbuildinfo
 
-# CDK output
-**/cdk.out
+# Open Api docs generated on deployment to sandbox
+open-api-doc.json

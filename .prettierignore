@@ -12,5 +12,3 @@ pnpm-lock.yaml
 **/build
 **/public
 **/nx-cache
-**/cdk.out
-nx-cache

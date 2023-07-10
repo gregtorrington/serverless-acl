@@ -1,0 +1,6 @@
+{
+  "packages": {
+    "contracts/core-contracts": {},
+    "packages/acl-sdk": {}
+  }
+}

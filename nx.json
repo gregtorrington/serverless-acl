@@ -1,15 +1,17 @@
 {
-  "npmScope": "acl-app",
+  "extends": "@nrwl/workspace/presets/npm.json",
+  "npmScope": "anti-corruption-layer",
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
-          "bootstrap",
           "build",
           "package",
+          "test",
           "test-circular",
           "test-linter",
+          "test-stylelint",
           "test-type",
           "test-unit"
         ],
@@ -24,46 +26,69 @@
   "targetDefaults": {
     "build": {
       "inputs": ["production", "^production"],
-      "dependsOn": ["^build", "^package"]
+      "dependsOn": ["^build", "^package"],
+      "outputs": ["{projectRoot}/dist"]
     },
     "package": {
       "inputs": ["production", "^production"],
       "dependsOn": ["^package"],
-      "outputs": [
-        "{projectRoot}/dist",
-        "{projectRoot}/tsconfig.build.tsbuildinfo"
-      ]
+      "outputs": ["{projectRoot}/dist"]
     },
     "deploy": {
       "inputs": ["production", "^production"],
       "dependsOn": ["^package", "^deploy", "^build", "bootstrap"]
     },
+    "deploy-dev": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^package", "^build", "bootstrap-dev"]
+    },
+    "deploy-prod": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^package", "^build", "bootstrap-prod"]
+    },
     "deploy-staging": {
       "inputs": ["production", "^production"],
-      "dependsOn": [
-        "^package",
-        "^build",
-        "^deploy-staging",
-        "bootstrap-staging"
-      ]
+      "dependsOn": ["^package", "^build", "bootstrap-staging"]
     },
-    "deploy-production": {
+    "deploy-test": {
       "inputs": ["production", "^production"],
-      "dependsOn": [
-        "^package",
-        "^build",
-        "^deploy-production",
-        "bootstrap-production"
-      ]
+      "dependsOn": ["^package", "^build", "bootstrap-test"]
+    },
+    "destroy-dev": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^package", "^build"]
+    },
+    "bootstrap": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^package", "^build"]
+    },
+    "bootstrap-dev": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^package", "^build"]
+    },
+    "bootstrap-prod": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^package", "^build"]
+    },
+    "bootstrap-staging": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^package", "^build"]
+    },
+    "bootstrap-test": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^package", "^build"]
+    },
+    "test": {
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^package"]
     },
     "test-linter": {
-      "inputs": ["default", "^production", "{workspaceRoot}/.eslintrc.js"],
+      "inputs": ["default", "^production"],
       "dependsOn": ["^package"]
     },
     "test-unit": {
       "inputs": ["default", "^production"],
-      "dependsOn": ["^package"],
-      "outputs": ["{projectRoot}/coverage"]
+      "dependsOn": ["^package"]
     },
     "test-type": {
       "inputs": ["default", "^production"],

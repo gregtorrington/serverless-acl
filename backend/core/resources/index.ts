@@ -4,4 +4,4 @@ import { AclStack } from './stack';
 
 const app = new App();
 
-new AclStack(app, 'core');
+new AclStack(app, 'acl-core');

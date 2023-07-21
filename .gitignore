@@ -1,18 +1,11 @@
 # package directories
 node_modules
-.npm
-
-# Serverless directories
-.serverless
 
 # Webpack directories
 .webpack
 
 # Esbuild directories
 .esbuild
-
-# Ignore stack.json files
-**/stack.json
 
 # Ignore env.json files
 **/env.json
@@ -28,13 +21,6 @@ coverage
 # Ignore Jetbrains folder settings
 .idea
 
-# local env
-.env
-.env.dev
-.env.development
-.env.local
-.env.test
-
 # misc
 .DS_Store
 npm-debug.log*
@@ -46,14 +32,8 @@ npm-debug.log*
 event.json
 env.json
 
-# Automatic documentation files
-open-api-doc.json
-
 # Nx caching
 nx-cache
 
 # Build cache manifests
 *.tsbuildinfo
-
-# Open Api docs generated on deployment to sandbox
-open-api-doc.json

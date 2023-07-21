@@ -21,6 +21,9 @@ coverage
 # Ignore Jetbrains folder settings
 .idea
 
+# Ignore gitleaks
+.gitleaksignore
+
 # misc
 .DS_Store
 npm-debug.log*

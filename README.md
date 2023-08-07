@@ -1,6 +1,6 @@
 # Serverless-ACL demo
 
-This repository contains the basic structure of a serverless ACL. To have this tool function correctly you need to define a valid URL within the domain logic to successfully hit external third party APIs.
+This repository contains the basic structure of a Serverless ACL. To have this tool function correctly you need to define a valid URL within the domain logic to successfully hit external third-party APIs.
 
 ## Built with
 -  NodeJs
@@ -8,7 +8,7 @@ This repository contains the basic structure of a serverless ACL. To have this t
 
 ## Deploy ACL
 - Clone the repo: git clone https://github.com/greg-torrington/serverless-acl.git
-- In your local CLI with you AWS credentials configured, run: 
+- In your local CLI with your AWS credentials configured, run: 
     - pnpm i
     - cdk synth
     - cdk bootstrap

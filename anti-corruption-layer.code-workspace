@@ -62,37 +62,5 @@
       "path": "backend/core",
       "name": "backend core [service]"
     },
-    {
-      "path": "packages/serverless-configuration",
-      "name": "serverless configuration [library]"
-    },
-    {
-      "path": "packages/serverless-helpers",
-      "name": "serverless helpers [library]"
-    },
-    {
-      "path": "contracts/core-contracts",
-      "name": "contracts core [library]"
-    },
-    {
-      "path": "packages/acl-constructs",
-      "name": "acl constructs [library]"
-    },
-    {
-      "path": "packages/acl-sdk",
-      "name": "acl sdk [library]"
-    },
-    {
-      "path": "packages/mock-data",
-      "name": "mock data [library]"
-    },
-    {
-      "path": "packages/test-server",
-      "name": "test server [library]"
-    },
-    {
-      "path": "packages/helpers",
-      "name": "helpers [library]"
-    }
   ]
 }

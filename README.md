@@ -8,7 +8,7 @@ This repository contains the basic structure of a Serverless ACL. To have this t
 
 ## Deploy ACL
 - Clone the repo: `git clone https://github.com/greg-torrington/serverless-acl.git`
-- In your local CLI with your AWS credentials configured, run: 
+- In the CLI with your AWS credentials configured, run: 
     - pnpm i
     - cdk synth
     - cdk bootstrap
